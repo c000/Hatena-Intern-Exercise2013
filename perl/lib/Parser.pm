@@ -8,6 +8,9 @@ sub new {
 }
 
 sub parse {
+    my ($self) = @_;
+    open (my $fh, "<", $self->{filename}) or die "$!";
+    return $self->{filename};
 }
 
 1;
