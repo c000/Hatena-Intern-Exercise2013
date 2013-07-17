@@ -10,35 +10,35 @@ sub new {
 }
 
 sub protocol {
-	my ($self) = @_;
-	my @splitted = split (/ /, $self->{req});
-	return $splitted[2];
+    my ($self) = @_;
+    my @splitted = split (/ /, $self->{req});
+    return $splitted[2];
 }
 
 sub method {
-	my ($self) = @_;
-	my @splitted = split (/ /, $self->{req});
-	return $splitted[0];
+    my ($self) = @_;
+    my @splitted = split (/ /, $self->{req});
+    return $splitted[0];
 }
 
 sub path {
-	my ($self) = @_;
-	my @splitted = split (/ /, $self->{req});
-	return $splitted[1];
+    my ($self) = @_;
+    my @splitted = split (/ /, $self->{req});
+    return $splitted[1];
 }
 
 sub uri {
-	my ($self) = @_;
-	return "http://" . $self->{host} . $self->path;
+    my ($self) = @_;
+    return "http://" . $self->{host} . $self->path;
 }
 
 sub time {
-	my ($self) = @_;
-	my $dt = DateTime->from_epoch (
-		time_zone => "Asia/Tokyo",
-		epoch => $self->{epoch},
-	);
-	return $dt->format_cldr ("yyyy-MM-ddTHH:mm:ss");
+    my ($self) = @_;
+    my $dt = DateTime->from_epoch (
+        time_zone => "Asia/Tokyo",
+        epoch => $self->{epoch},
+    );
+    return $dt->format_cldr ("yyyy-MM-ddTHH:mm:ss");
 }
 
 1;
