@@ -35,7 +35,6 @@ sub uri {
 sub time {
     my ($self) = @_;
     my $dt = DateTime->from_epoch (
-        time_zone => "Asia/Tokyo",
         epoch => $self->{epoch},
     );
     return $dt->format_cldr ("yyyy-MM-ddTHH:mm:ss");

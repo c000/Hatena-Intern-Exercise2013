@@ -18,9 +18,10 @@ sub parse {
         my $elem = {};
         my @pairs = split ("\t", $line);
         foreach my $pair (@pairs) {
-            (my $key, my $val) = split (":", $pair);
-            print "$key : $val\n";
-            if ($val != "-") {
+            $pair =~ /^(.+?):(.+)$/;
+            my $key = $1;
+            my $val = $2;
+            if ($val ne "-") {
                 $elem->{$key} = $val;
             }
         }
