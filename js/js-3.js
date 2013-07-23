@@ -3,7 +3,10 @@
 	'use strict';
 
 	var submitButtom = document.getElementById ("submit-button");
+	var logInput = document.getElementById ("log-input");
+	var tableContainer = document.getElementById ("table-container");
 	submitButtom.addEventListener ("click", function () {
+		createLogTable (tableContainer, parseLTSVLog (logInput.value));
 	});
-	console.log (submitButtom);
+	console.log (logInput);
 })(document, undefined);

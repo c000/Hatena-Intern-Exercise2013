@@ -58,7 +58,6 @@ var createLogTable = function (divDOM, logs) {
 					return td;
 				})());
 			}
-			console.log (tr);
 			return tr;
 		})());
 	}
